@@ -6,10 +6,10 @@
 	<div class="container">
 		<!-- ============================ COMPONENT 1 ================================= -->
 		{% if not cart_items %}
-		<h2 class="text-center">Your shopping cart is empty</h2>
+		<h2 class="text-center">Savatingiz bo'sh</h2>
 		<br />
 		<div class="text-center">
-			<a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+			<a href="{% url 'store' %}" class="btn btn-primary">Xarid qilishda davom eting</a>
 		</div>
 		{% else %}
 		<div class="row">
@@ -18,9 +18,9 @@
 					<table class="table table-borderless table-shopping-cart">
 						<thead class="text-muted">
 							<tr class="small text-uppercase">
-								<th scope="col">Product</th>
-								<th scope="col" width="120">Quantity</th>
-								<th scope="col" width="120">Price</th>
+								<th scope="col">Mahsulot</th>
+								<th scope="col" width="120">Miqdori</th>
+								<th scope="col" width="120">Narxi</th>
 								<th scope="col" class="text-right" width="200"></th>
 							</tr>
 						</thead>
@@ -84,7 +84,7 @@
 								</td>
 								<td class="text-right">
 									<a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}"
-										class="btn btn-danger" onclick="return confirm('Are you sure?')">
+										class="btn btn-danger" onclick="return confirm('Ishonchingiz komilmi?')">
 										Remove</a>
 								</td>
 							</tr>
@@ -119,7 +119,7 @@
 						<a href="{% url 'checkout' %}" class="btn btn-primary btn-block">
 							Checkout
 						</a>
-						<a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
+						<a href="{% url 'store' %}" class="btn btn-light btn-block">Xarid qilishda davom eting</a>
 					</div>
 					<!-- card-body.// -->
 				</div>

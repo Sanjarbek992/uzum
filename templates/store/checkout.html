@@ -9,12 +9,12 @@
             <aside class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Billing Address</h4>
+                        <h4 class="card-title mb-4">To'lov manzili</h4>
                         <form action="{% url 'place_order' %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col form-group">
-                                    <label for="">First Name</label>
+                                    <label for="">Ismingiz</label>
                                     <input type="text" name="first_name" class="form-control" required>
                                 </div>
                                 <div class="col form-group">
@@ -70,9 +70,9 @@
                         <table class="table table-borderless table-shopping-cart">
                             <thead class="text-muted">
                                 <tr class="small text-uppercase">
-                                    <th scope="col">Product</th>
-                                    <th scope="col" width="120">Quantity</th>
-                                    <th scope="col" width="120">Price</th>
+                                    <th scope="col">Mahsulot</th>
+                                    <th scope="col" width="120">Miqdori</th>
+                                    <th scope="col" width="120">Narxi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,8 +108,8 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-                        <button type="submit" name="submit" class="btn btn-primary btn-block">Place Order</button>
-                        <a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
+                        <button type="submit" name="submit" class="btn btn-primary btn-block">Buyurtma berish</button>
+                        <a href="{% url 'store' %}" class="btn btn-light btn-block">Xarid qilishda davom eting</a>
                         </form>
                     </div> <!-- card-body.// -->
                 </div> <!-- card.// --> 
