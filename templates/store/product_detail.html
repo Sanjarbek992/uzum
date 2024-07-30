@@ -30,7 +30,7 @@
                                 <div class="item-option-select">
                                     <h6>Choose Color</h6>
                                     <select name="color" class="form-select" required>
-                                        <option value="" disabled selected>Choose color</option>
+                                        <option value="" disabled selected>Rangini tanlang</option>
                                         {% for variation in single_product.variation_set.colors %}
                                         <option value="{{ variation.variation_value | lower }}">{{ variation.variation_value | capfirst }}</option>
                                         {% endfor %}
@@ -40,7 +40,7 @@
                             <!-- row.// -->
                             <div class="row">
                                 <div class="item-option-select">
-                                    <h6>Select Size</h6>
+                                    <h6>O'lchamini tanlang</h6>
                                     <select name="size" class="form-select" required>
                                         <option value="" disabled selected>Hajmini tanlang</option>
                                         {% for variation in single_product.variation_set.sizes %}
@@ -53,20 +53,20 @@
                             <hr />
                             {% if single_product.stock > 0 %} {% if in_cart %}
                             <button type="submit" class="btn btn-success">
-                                <span class="text">Add to cart</span>
+                                <span class="text">Savatga qo'shing</span>
                                 <i class="fas fa-check"></i>
                             </button>
                             <a href="{% url 'cart' %}" class="btn btn-outline-primary">
-                                <span class="text">Show cart</span>
+                                <span class="text">Savatni ko'rsating</span>
                                 <i class="fas fa-eye"></i>
                             </a>
                             {% else %}
                             <button type="submit" class="btn btn-primary">
-                                <span class="text">Add to cart</span>
+                                <span class="text">Savatga qo'shish</span>
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             {% endif %} {% else %}
-                            <h5 class="text-danger">Out of Stock</h5>
+                            <h5 class="text-danger">Sotuvda yo'q</h5>
                             {% endif %}
                         </article>
                         <!-- product-info-aside .// -->
@@ -83,10 +83,10 @@
             <div class="col-md-9">
                 <form action="{% url 'submit_review' single_product.id %}" method="POST">
                     {% csrf_token %}
-                    <h5>Write your review</h5>
+                    <h5>Sharh yozing</h5>
                     <div>
                         {% include "includes/alerts.html" %}
-                        <label>How do you rate this product?</label>
+                        <label>Mahsulotni qanday baholaysiz</label>
                         <br>
                         <div class="rate">
 							<input type="radio" name="rating" id="rating10" value="5" required /><label for="rating10" title="5"></label>
@@ -101,26 +101,26 @@
 							<input type="radio" name="rating" id="rating1" value="0.5" required /><label for="rating1" title="0.5" class="half"></label>
 						</div>
                         <br>
-                        Review title:
+                        Barcha sharhlar:
                         <input type="text" class="form-control" name="subject">
                         <br>
-                        Review
+                        Sharh yozish
                         <textarea name="review" rows="4" class="form-control"></textarea>
                         <br>
                         {% if user.is_authenticated %}
                             {% if orderproduct %}
                             <input type="submit" value="Submit Review" class="btn btn-primary">
                             {% else %}
-                            <p>You must purchase this product to post a review.</p>
+                            <p>Sharh yozish uchun ushbu mahsulotni sotib olishingiz kerak.</p>
                             {% endif %}
                         {% else %}
-                        <p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span></p>
+{#                        <p>Ko'rib chiqish uchun tizimga kirgan bo'lishingiz kerak. <span><a href="{% url 'login' %}">Hozir kiring</a></span></p>#}
                         {% endif %}
                     </div>
                 </form>
                 <br>
                 <header class="section-heading">
-                    <h3>Customer Reviews</h3>
+                    <h3>Mijozlarning sharhlari</h3>
                 </header>
                 {% for review in reviews %}
                 <article class="box mb-3">

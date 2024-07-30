@@ -17,8 +17,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
-                    <li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Bog'lanish </a></li>
+                    <li><a href="https://mail.google.com/mail" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
+                    <li><a href="https://uzum.uz/uz/faq#biz-bilan-boglaning" class="nav-link"> <i class="fa fa-phone"></i> Bog'lanish </a></li>
                 </ul> <!-- list-inline //  -->
             </div> <!-- navbar-collapse .// -->
         </div> <!-- container //  -->
@@ -45,36 +45,36 @@
                         </div>
                     </div> <!-- category-wrap.// -->
                 </div> <!-- col.// -->
-                <a href="{% url 'store' %}" class="btn btn-outline-primary">Store</a>
+                <a href="{% url 'store' %}" class="btn btn-outline-primary">Do'kon</a>
                 <div class="col-lg  col-md-6 col-sm-12 col">
-{#                    <form action="{% url 'search' %}" class="search" method="GET">#}
-{#                        <div class="input-group w-100">#}
-{#                            <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="q" value="{{ q }}">#}
-{#                            <div class="input-group-append">#}
-{#                                <button class="btn btn-primary" type="submit">#}
-{#                                    <i class="fa fa-search"></i>#}
-{#                                </button>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </form> <!-- search-wrap .end// -->#}
+                    <form action="{% url 'search' %}" class="search" method="GET">
+                        <div class="input-group w-100">
+                            <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="q" value="{{ q }}">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form> <!-- search-wrap .end// -->
                 </div> <!-- col.// -->
                 <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
                     <div class="d-flex justify-content-end mb-3 mb-lg-0">
                         {% if user.id is None %}
                         <div class="widget-header">
-                            <small class="title text-muted">Welcome guest!</small>
+                            <small class="title text-muted">Hush kelibsiz!</small>
                             <div>
-                                <a href="{% url 'login' %}">Kirish</a> <span class="dark-transp"> | </span>
-                                <a href="{% url 'register' %}"> Register</a>
+                                <a href="#">Kirish</a> <span class="dark-transp"> | </span>
+                                <a href="#"> Registratsiya</a>
                             </div>
                         </div>
                         {% else %}
                         <div class="widget-header">
                             <small class="title text-muted">Hush kelibsiz {{ user.first_name }}!</small>
-{#                            <div>#}
-{#                                <a href="{% url 'dashboard' %}">Dashboard</a> <span class="dark-transp"> | </span>#}
-{#                                <a href="{% url 'logout' %}"> Logout</a>#}
-{#                            </div>#}
+                            <div>
+                                <a href="#">Boshqaruv paneli</a> <span class="dark-transp"> | </span>
+                                <a href="#"> Chiqish</a>
+                            </div>
                         </div>
                         {% endif %}
                         <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
