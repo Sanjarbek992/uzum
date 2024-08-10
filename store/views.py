@@ -70,7 +70,7 @@ def submit_review(request, product_id):
             review = ReviewRating.objects.get(user__id=request.user.id, product__id=product_id)
             form = ReviewForm(request.POST, instance=review)
             form.save()
-            messages.success(request, "Thank you! Your review has been updated.")
+            messages.success(request, "Rahmat! Sharhingiz yangilandi.")
             return redirect(url)
         except Exception:
             form = ReviewForm(request.POST)
@@ -83,5 +83,5 @@ def submit_review(request, product_id):
                 data.product_id = product_id
                 data.user_id = request.user.id
                 data.save()
-                messages.success(request, "Thank you! Your review has been submitted.")
+                messages.success(request, "Rahmat! Sharhingiz yuborildi.")
                 return redirect(url)

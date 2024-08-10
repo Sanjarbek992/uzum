@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarTop4">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link"> English </a>
+                        <a href="#" class="nav-link"> UZB </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link"> USZ </a>
@@ -64,8 +64,8 @@
                         <div class="widget-header">
                             <small class="title text-muted">Hush kelibsiz!</small>
                             <div>
-                                <a href="#">Kirish</a> <span class="dark-transp"> | </span>
-                                <a href="#"> Registratsiya</a>
+                                <a href="{% url 'login' %}">Kirish</a> <span class="dark-transp"> | </span>
+                                <a href="{% url 'register' %}"> Registratsiya</a>
                             </div>
                         </div>
                         {% else %}

@@ -12,7 +12,7 @@ class Cart(models.Model):
 
 class CartItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    varitions = models.ManyToManyField(Variation, blank=True)
+    variations = models.ManyToManyField(Variation, blank=True)
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     is_active = models.BooleanField(default=True)
@@ -21,4 +21,4 @@ class CartItem(models.Model):
         return self.product.price * self.quantity
 
     def __unicode__(self):
-        return self.product
+        return str(self.product)

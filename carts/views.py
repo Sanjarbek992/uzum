@@ -85,8 +85,8 @@ def add_cart(request, product_id):
             existing_variation_list = [list(item.variations.all()) for item in cart_items]
             id = [item.id for item in cart_items]
             if product_variations in existing_variation_list:
-                idex = existing_variation_list.index(product_variations)
-                cart_item = CartItem.objects.get(id=id[idex])
+                index = existing_variation_list.index(product_variations)
+                cart_item = CartItem.objects.get(id=id[index])
                 cart_item.quantity += 1
             else:
                 cart_item = CartItem.objects.create(
@@ -113,7 +113,6 @@ def remove_cart(request, product_id, cart_item_id):
     cart = Cart.objects.get(cart_id=_cart_id(request))
     product = get_object_or_404(Product, id=product_id)
     try:
-
         cart_item = CartItem.objects.get(product=product, cart=cart, id=cart_item_id)
         if cart_item.quantity > 1:
             cart_item.quantity -= 1
